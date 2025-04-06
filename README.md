@@ -62,3 +62,48 @@ Antes de iniciar, é necessário ter instalado:
 ---
 
 ## 📦 Instalação e Execução
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/Prog-LucasAlves/ENG_AirFlow-Faker-Docker.git
+cd airflow-docker-postgres
+```
+
+2. Crie o arquivo .env com o conteúdo:
+
+```env
+# Airflow Core
+AIRFLOW__CONNECTIONS__TEST_CONNECTIONS=True
+AIRFLOW__CONNECTIONS__ALLOW_URI_AS_SECRET=true
+AIRFLOW__CONNECTIONS__ALLOWED_PROTOCOLS=*
+AIRFLOW__CORE__FERNET_KEY=UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E=
+AIRFLOW__CORE__EXECUTOR=LocalExecutor
+AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+AIRFLOW__CORE__LOAD_EXAMPLES=False
+AIRFLOW__CORE__TEST_CONNECTION=True
+AIRFLOW_UID=0
+
+# Backend DB
+AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+AIRFLOW__DATABASE__LOAD_DEFAULT_CONNECTIONS=0
+
+# Airflow Init
+_AIRFLOW_DB_MIGRATE=True
+_AIRFLOW_WWW_USER_CREATE=True
+_AIRFLOW_WWW_USER_USERNAME=airflow
+_AIRFLOW_WWW_USER_PASSWORD=airflow
+```
+
+3. Suba os serviços:
+
+```bash
+docker compose up -d
+```
+
+4. Acesse a interface do Airflow:
+
+```arduino
+http://localhost:8080
+```
