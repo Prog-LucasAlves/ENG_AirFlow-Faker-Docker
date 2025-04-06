@@ -3,7 +3,7 @@
 
 Este projeto tem como objetivo demonstrar uma arquitetura simples e funcional para orquestração de pipelines utilizando **Apache Airflow** em conjunto com **Docker** e **PostgreSQL**. A stack é ideal para fluxos de dados programáveis, com controle total sobre agendamentos, logs e estados de execução.
 
-**Banco de dados utlizado do Projeto [AED_DBT](...)
+**Banco de dados utlizado do Projeto [AED_DBT](https://github.com/Prog-LucasAlves/AED_DBT)**
 
 ---
 
@@ -35,10 +35,30 @@ Utilizamos variáveis de ambiente através do arquivo .env para garantir flexibi
 
 ```bash
 airflow_project/
-├── dags/                 # Arquivos com os fluxos de trabalho (DAGs)
-│   └── example_dag.py
-├── .env                  # Variáveis de ambiente
-├── Dockerfile            # Imagem customizada do Airflow
-├── docker-compose.yml    # Orquestração dos serviços
+├── dags/                    # Arquivos com os fluxos de trabalho (DAGs)
+│   └── dag_etl.py
+├── sql                      # Arquivos Sql que serão executados pela (DAG)
+├── .env                     # Variáveis de ambiente
+├── .flake8                  # Configuração flake8
+├── .gitignore               # Arquivos a serem ignorados
+├── pre-commit-config.yaml   # Configuração precommit
+├── .python-version          # Versão do Python utilizada no projeto
+├── Dockerfile               # Imagem customizada do Airflow
+├── docker-compose.yml       # Orquestração dos serviços
+├── pyproject.toml           # Lista de dependências do projeto
+├── README.md                # Documentação do projeto
 
 ```
+
+---
+
+## ⚙️ Pré-requisitos
+
+Antes de iniciar, é necessário ter instalado:
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+---
+
+## 📦 Instalação e Execução

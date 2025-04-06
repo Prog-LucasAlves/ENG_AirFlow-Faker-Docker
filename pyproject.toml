@@ -6,12 +6,20 @@ authors = ["Lucas Alves <lucasalves_taz@hotmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12,<3.13"
+apache-airflow = "^2.10.5"
+psycopg2-binary = "^2.9.10"
+pandas = "^2.2.3"
 
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.1.0"
+taskipy = "^1.14.1"
+shandy-sqlfmt = {extras = ["jinjafmt"], version = "^0.26.0"}
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+sql = "sqlfmt ."
