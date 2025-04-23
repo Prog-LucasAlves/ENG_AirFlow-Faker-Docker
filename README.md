@@ -107,3 +107,29 @@ docker compose up -d
 ```arduino
 http://localhost:8080
 ```
+
+---
+
+## 📄 Exemplo de DAG
+
+Dentro da pasta dags/, existe um arquivo chamado dag_etl.py com o seguinte fluxo:
+
+- A dag realiza a execução do arquivo extract_client_email_marketing.sql.
+
+---
+
+## ✅ Status do Projeto
+
+✅ Ambiente funcional com Docker
+✅ Orquestração de DAGs com Airflow
+✅ Banco de metadados em PostgreSQL
+✅ Exemplo de DAG implementado
+🚧 DAGs avançadas (em desenvolvimento)
+
+---
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+---
